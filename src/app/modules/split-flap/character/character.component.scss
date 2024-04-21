@@ -1,0 +1,105 @@
+:host {
+  --text-color: #000;
+  --bg-color: rgba(255, 255, 255, 0.2);
+}
+.splitflap {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  // margin: 5px;
+  line-height: 50px;
+  font-size: 30px;
+  font-family: Monospace;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.top {
+  position: relative;
+  height: 50%;
+  width: 100%;
+  background: var(--bg-color);
+  backdrop-filter: blur(10px); /* Apply backdrop filter for the glass effect */
+
+  overflow: hidden;
+  z-index: 0;
+}
+
+div {
+  perspective: 500px;
+}
+
+.bottom {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-top: -50%;
+  z-index: -1;
+  background: var(--bg-color);
+  backdrop-filter: blur(10px); /* Apply backdrop filter for the glass effect */
+
+  transform-origin: center;
+}
+
+.nextHalf {
+  position: relative;
+  height: 50%;
+  width: 100%;
+  margin-top: -100%;
+  overflow: hidden;
+  z-index: 2;
+  background: var(--bg-color);
+  backdrop-filter: blur(10px); /* Apply backdrop filter for the glass effect */
+
+  transform-origin: bottom;
+}
+
+.nextFull {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: var(--bg-color);
+  backdrop-filter: blur(10px); /* Apply backdrop filter for the glass effect */
+
+  margin-top: -50%;
+  z-index: -3;
+}
+
+.flip1 {
+  animation: flip1 ease-in 1;
+  animation-duration: 0.5s;
+}
+
+.flip2 {
+  animation: flip2 ease-out 1;
+  animation-duration: 0.5s;
+}
+
+@keyframes flip1 {
+  0% {
+    transform: rotateX(0deg);
+    // background: var(--bg-color);
+    // backdrop-filter: blur(10px); /* Apply backdrop filter for the glass effect */
+  }
+  50% {
+    transform: rotateX(90deg);
+    background-color: black;
+  }
+  100% {
+    transform: rotateX(90deg);
+  }
+}
+
+@keyframes flip2 {
+  0% {
+    transform: rotateX(-90deg);
+  }
+  50% {
+    transform: rotateX(-90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+    // background: var(--bg-color);
+    // backdrop-filter: blur(10px); /* Apply backdrop filter for the glass effect */
+  }
+}

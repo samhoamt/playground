@@ -1,0 +1,5 @@
+<div class="wrapper" [style.gap]="charSpace + 'px'">
+  @for(char of value.split(''); track $index){
+    <sc-character [char]="char" [size]="charSize" [speed]="speed"></sc-character>
+  }
+</div>

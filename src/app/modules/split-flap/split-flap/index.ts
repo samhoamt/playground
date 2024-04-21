@@ -1,0 +1,1 @@
+export { SplitFlapComponent as default, SplitFlapComponent } from './split-flap.component';

@@ -1,0 +1,1 @@
+export { CharacterComponent as default, CharacterComponent } from './character.component';
